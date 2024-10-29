@@ -1,0 +1,82 @@
+http://localhost:2435/sem+t%C3%ADtulo<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergunta Especial</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            position: relative;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #nameForm {
+            display: none;
+            margin-top: 20px;
+        }
+        #certificate {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="question">
+        <h1 id="questionText">Você quer ser para sempre a mulher da minha vida?</h1>
+        <button id="yesButton">Sim</button>
+        <button id="noButton">Não</button>
+    </div>
+
+    <div id="nameForm">
+        <h2>EBAAAAAAAAAAAAAAAAAAAAA 🤭 🫶❤️ ✨</h2>
+        <label for="name">Digite seu nome aqui:</label>
+        <input type="text" id="name" placeholder="Seu nome aqui">
+        <button id="submitName">Enviar</button>
+    </div>
+
+    <div id="certificate">
+        <h2>Certidão de Casamento</h2>
+        <p id="nameOutput"></p>
+        <p>Vocês estão oficialmente casados! ❤️❤️❤️🌹🌹🌹</p>
+    </div>
+
+    <script>
+        const yesButton = document.getElementById("yesButton");
+        const noButton = document.getElementById("noButton");
+        const question = document.getElementById("question");
+        const nameForm = document.getElementById("nameForm");
+        const certificate = document.getElementById("certificate");
+        const nameOutput = document.getElementById("nameOutput");
+
+        yesButton.addEventListener("click", () => {
+            question.style.display = "none"; // Esconder a pergunta e os botões ao clicar em "Sim"
+            nameForm.style.display = "block"; // Mostrar o formulário de nome
+        });
+
+        noButton.addEventListener("click", () => {
+            noButton.style.display = "none"; // Esconder apenas o botão "Não" ao clicar nele
+        });
+
+        document.getElementById("submitName").addEventListener("click", () => {
+            const name = document.getElementById("name").value;
+            nameOutput.innerHTML = `Nome dela: ${name}<br>Nome dele: Kevin`; // Exibir o nome dela e seu nome
+            nameForm.style.display = "none"; // Esconder o formulário após envio
+            certificate.style.display = "block"; // Mostrar a certidão
+        });
+    </script>
+
+</body>
+</html>
